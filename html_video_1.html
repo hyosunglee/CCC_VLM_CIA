@@ -1,0 +1,151 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale1.0,user-scalable=no">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="layer1" class="cLayer" style="background-color:#ff6666">메뉴1</div>
+    <div id="layer2" class="cLayer" style="background-color:#ffcc33">메뉴2</div>
+    <div id="layer3" class="cLayer" style="background-color:#ffff00">메뉴3</div>
+    <div id="layer4" class="cLayer" style="background-color:#33ff66">메뉴4</div>
+ 
+     <h2>1. HTML에서 동영상 재생</h2>
+    <p style="margin-bottom: 50px;">
+        HTML5 전에 웹 페이지에서 비디오를 나타내는 표준은 없었습니다. <br /> HTML5 전에는, 동영상은 (플래시
+        등)플러그 인로만 재생 할 수 있었습니다. <br /> HTML5 <video> 요소는 웹 페이지에서 비디오를
+        포함하는 표준 방식을 지정합니다.
+    </p>
+ 
+    <h2>2-1. HTML video 요소 컨트롤러를 사용</h2>
+    <p>
+        컨트롤이 속성은 재생, 일시 정지 및 볼륨과 같은 비디오 컨트롤을 추가합니다. 항상 포함하는 것이 좋습니다 . <br />
+        높이와 폭이 설정되어 있지 않으면, 브라우저는 비디오의 사이즈를 알지 못합니다. <br /> 효과는 페이지가 비디오 부하
+        상태 변경 할 것입니다. <br /> <video>와 </video> 사이의 텍스트 태그는
+        <video> 요소를 지원하지 않는 브라우저에 표시됩니다.<br /> 여러 <source> 요소는 다른
+        비디오 파일을 링크 할 수 있습니다. <br />
+    </p>
+ 
+    <video width="320" height="240" controls style="margin-bottom: 50px;">
+        <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/movie.mp4" type="video/mp4">
+        <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+ 
+ 
+    <h2>2-2.HTML video 자동재생</h2>
+    <video width="320" height="240" autoplay style="margin-bottom: 50px;">
+        <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/movie.mp4" type="video/mp4">
+        <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+    </video>
+ 
+    <h2>3. HTML 비디오 - 브라우저 지원</h2>
+    <table style="margin-bottom: 50px;">
+        <tr style="border: 1px solid #f00;">
+            <th style="width: 25%">Browser</th>
+            <th style="width: 25%">MP4</th>
+            <th style="width: 25%">WebM</th>
+            <th style="width: 25%">Ogg</th>
+        </tr>
+        <tr>
+            <td>Internet Explorer</td>
+            <td>YES</td>
+            <td>NO</td>
+            <td>NO</td>
+        </tr>
+        <tr>
+            <td>Chrome</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>YES</td>
+        </tr>
+        <tr>
+            <td>Firefox</td>
+            <td>YES</td>
+            <td>YES</td>
+            <td>YES</td>
+        </tr>
+        <tr>
+            <td>Safari</td>
+            <td>YES</td>
+            <td>NO</td>
+            <td>NO</td>
+        </tr>
+        <tr>
+            <td>Opera</td>
+            <td>NO</td>
+            <td>YES</td>
+            <td>YES</td>
+        </tr>
+    </table>
+ 
+ 
+    <h2>4. HTML 비디오 - 미디어 유형</h2>
+    <table style="margin-bottom: 50px;">
+        <tr>
+            <th style="width: 50%">File Format</th>
+            <th style="width: 50%">Media Type</th>
+        </tr>
+        <tr>
+            <td>MP4</td>
+            <td>video/mp4</td>
+        </tr>
+        <tr>
+            <td>WebM</td>
+            <td>video/webm</td>
+        </tr>
+        <tr>
+            <td>Ogg</td>
+            <td>video/ogg</td>
+        </tr>
+    </table>
+ 
+ 
+    <h2>5. HTML 비디오 - 메서드, 속성 및 이벤트</h2>
+    <p>
+        HTML5는
+        <비디오> 요소에 대한 DOM 메서드, 속성 및 이벤트를 정의합니다. <br />
+ 
+        이것은 당신이 시간과 볼륨을 설정뿐만 아니라,게임 및 비디오를 일시 정지 할 수 있습니다. <br />
+ 
+        DOM의 비디오 재생이 시작 때 통지 할 수있는 이벤트, 일시 정지도 있습니다.
+    </p>
+    <div>
+        <button onclick="playPause()">Play/Pause</button>
+        <button onclick="makeBig()">Big</button>
+        <button onclick="makeSmall()">Small</button>
+        <button onclick="makeNormal()">Normal</button>
+        <br>
+        <video id="video1" width="420" style="margin-bottom: 50px;">
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/movie.ogg" type="video/mp4">
+            <source src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/485050/mov_bbb.ogg" type="video/ogg">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+ 
+    <!--동영상 플레이어의 버튼과 동영상의 크기를 조절하는 스크립트입니다. 자세한 설정은 script.js에서 설정할 수 있습니다.-->
+    <script src="js/script.js"></script>
+ 
+    <h2>6. HTML5 비디오 태그</h2>
+    <table class="tag">
+        <tr>
+            <th style="width: 30%">Tag</th>
+            <th>Description</th>
+        </tr>
+        <tr>
+            <td><a href="https://www.w3schools.com/tags/tag_video.asp"><video></a></td>
+            <td>비디오나 동영상을 정의</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.w3schools.com/tags/tag_source.asp"><source></a></td>
+            <td><비디오> 및 <오디오>와 같은 미디어 요소에 대해 여러 미디어 리소스를 정의</td>
+        </tr>
+        <tr>
+            <td><a href="https://www.w3schools.com/tags/tag_track.asp"><track></a></td>
+            <td>미디어 플레이어의 텍스트 트랙을 정의</td>
+        </tr>
+    </table>
+</body>
+</html>
